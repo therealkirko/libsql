@@ -2,6 +2,11 @@
 
 A Turso-like database management system built on top of libSQL. Turbo DB allows you to create, manage, and interact with multiple libSQL database instances through a simple REST API.
 
+📖 **Documentation:**
+- [Testing Guide](TESTING.md) - Comprehensive testing instructions
+- [Deployment Guide](DEPLOYMENT.md) - Production deployment guide
+- [Example Application](examples/simple-app/) - Sample Go client application
+
 ## Features
 
 - **Database Management**: Create, list, stop, and delete libSQL databases via REST API
@@ -64,7 +69,17 @@ This will create two binaries:
 
 ## Quick Start
 
-### 1. Start the Server
+### Option 1: Run the Demo Script
+
+The fastest way to see Turbo DB in action:
+
+```bash
+./demo.sh
+```
+
+This will start the server, create sample databases, and demonstrate all features.
+
+### Option 2: Manual Start
 
 ```bash
 # From the turbo-db directory
@@ -334,6 +349,24 @@ const client = createClient({
 await client.execute("CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)");
 ```
 
+## Documentation
+
+- **[TESTING.md](TESTING.md)** - Complete testing guide with examples
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Production deployment instructions
+- **[examples/simple-app/](examples/simple-app/)** - Example Go client application
+
+## Examples
+
+Check out the [examples](examples/) directory for:
+- Simple Go client application
+- Integration examples
+- API usage patterns
+
+Run the demo:
+```bash
+./demo.sh
+```
+
 ## Roadmap
 
 - [x] Basic database CRUD operations
@@ -341,9 +374,12 @@ await client.execute("CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)");
 - [x] REST API
 - [x] CLI tool
 - [x] API key authentication
+- [x] Comprehensive documentation
+- [x] Example applications
+- [x] Demo script
 - [ ] Database restart functionality
 - [ ] Database backup/restore
-- [ ] Metrics and monitoring
+- [ ] Metrics and monitoring (Prometheus)
 - [ ] Multi-user support with per-database authentication
 - [ ] Database templates
 - [ ] Resource limits (CPU, memory, connections)
